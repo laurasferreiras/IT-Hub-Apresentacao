@@ -993,10 +993,18 @@ function advance(t, k){
   save(); render(); if (P.result) window.scrollTo(0, 0);
 }
 /* Tempo esgotado: regra original — a solução é mostrada e o fragmento é recuperado. */
+
 function tick(){
   const k = playingK();
-  if (k && Date.now() >= st(k).endsAt) { const g = P.games[k]; if (g) g.anim = null; finishStage(k, true); window.scrollTo(0, 0); }
-  render();
+
+  if (k && Date.now() >= st(k).endsAt) {
+    const g = P.games[k];
+    if (g) g.anim = null;
+    finishStage(k, true);
+    window.scrollTo(0, 0);
+  }
+
+  paintTimer();
 }
 
 /* ===================== CÓDIGOS DAS ETAPAS 2 A 4 ===================== */
