@@ -433,6 +433,119 @@ a{color:inherit}
 .human-box{padding:1.4cqw 1.8cqw}
 .human-box p{font-size:1.75cqw}
 .slide .main{overflow:hidden}
+/* ===================== FASES ACRESCENTADAS (arrastar, mapa, interface acessível, linha do dia) ===================== */
+[data-drag]{touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab}
+.ghost{position:fixed;left:0;top:0;z-index:999;pointer-events:none;opacity:.92;transform-origin:center;box-shadow:0 16px 40px rgba(0,0,0,.5);rotate:-3deg}
+.dragging{opacity:.35}
+.picked{outline:3px solid var(--cyan);outline-offset:2px}
+.drop-hover{outline:3px dashed var(--mag);outline-offset:3px;background:rgba(255,62,165,.12)!important}
+/* M1: celular da Lia */
+.phonehome{border-radius:22px;padding:12px;background:linear-gradient(160deg,#2B1F66,#151A2E);border:2px solid #2E3654;display:grid;gap:10px}
+.ph-status{display:flex;justify-content:space-between;font-size:12px;color:var(--soft);font-weight:600}
+.ph-widget{background:rgba(255,255,255,.07);border-radius:12px;padding:10px 12px;font-size:14px}
+.ph-widget b{font-size:22px;margin-right:6px}
+.dock{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px;border-radius:16px;background:rgba(255,255,255,.08);border:2px dashed rgba(255,255,255,.18)}
+.dslot{min-height:86px;border-radius:12px;display:grid;place-items:center;align-content:center;gap:4px;background:rgba(12,14,26,.4);font-weight:600}
+.dslot small{font-size:12px;color:var(--soft)}
+.appi{width:52px;height:52px;display:block}
+.appi svg{width:100%;height:100%}
+.apps{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.appcard{display:grid;justify-items:center;gap:3px;text-align:center;background:var(--card-2);border:1px solid var(--edge);border-radius:14px;padding:10px 6px}
+.appcard b{font-size:14px}
+.appcard small{font-size:11px;color:var(--soft);line-height:1.2}
+.rmap{width:100%;height:auto;display:block;border-radius:16px}
+.route-on{stroke-dasharray:10 7;animation:dash 1s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-34}}
+.consq{border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.35}
+.consq.ok{background:rgba(61,220,151,.16);border:1px solid var(--lime)}
+.consq.bad{background:rgba(255,92,122,.14);border:1px solid var(--bad)}
+.consq b{margin-right:4px}
+.consq .rate{display:block;color:var(--amber);font-size:20px;letter-spacing:2px}
+.routes{display:grid;gap:8px}
+.routecard{display:grid;grid-template-columns:auto 1fr;column-gap:10px;text-align:left;border:2px solid var(--c);border-radius:12px;padding:10px 12px;background:color-mix(in srgb,var(--c) 10%,var(--card))}
+.routecard b{grid-row:span 2;align-self:center;background:var(--c);color:#0C0E1A;border-radius:8px;padding:4px 8px;font-size:13px}
+.routecard span{font-weight:600;font-size:14px}
+.routecard small{font-size:12px;color:var(--soft)}
+.routecard.sel{box-shadow:0 0 0 3px var(--c)}
+.routecard.no{opacity:.4}
+.notif{display:flex;gap:10px;align-items:center;background:#fff;color:#0C0E1A;border-radius:14px;padding:10px 12px}
+.notif svg{width:36px;height:36px;flex:none}
+.notif div{display:grid;font-size:13px;line-height:1.3}
+.bagrow{display:grid;grid-template-columns:96px 1fr;gap:10px;align-items:start}
+.bag{display:grid;justify-items:center;gap:4px;padding:8px;border-radius:16px;border:2px dashed var(--lav);background:rgba(169,139,255,.08);min-height:120px;align-content:center}
+.bag svg{width:64px;height:64px}
+.bag b{font-size:16px}
+.bagrow .items{grid-template-columns:repeat(2,1fr)}
+/* M2: trilha de aprendizagem */
+.trail{display:flex;align-items:center;gap:4px;padding:10px 8px;border-radius:16px;background:var(--card);overflow-x:auto}
+.tstart,.tend{display:grid;justify-items:center;gap:2px;flex:none}
+.tstart svg,.tend svg{width:38px;height:38px}
+.tstart small,.tend small{font-size:10px;color:var(--soft)}
+.tslot{position:relative;flex:1;min-width:62px;min-height:78px;border-radius:12px;border:2px dashed var(--line);display:grid;place-items:center;align-content:center;gap:2px;background:#11142A}
+.tslot em{position:absolute;top:3px;left:6px;font-style:normal;font-size:11px;font-weight:700;color:var(--soft)}
+.tslot.filled{border:2px solid var(--lav);background:rgba(169,139,255,.12)}
+.tslot small{font-size:11px;font-weight:700}
+.tarrow{font-style:normal;color:var(--soft);font-size:18px;flex:none}
+.lart{width:40px;height:40px;display:block}
+.lart svg{width:100%;height:100%}
+.lcards{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.lcard{display:grid;justify-items:center;gap:3px;text-align:center;border-radius:14px;padding:10px 6px;background:linear-gradient(170deg,#2B1F66,#1C2240);border:1px solid var(--lav)}
+.lcard .lart{width:48px;height:48px}
+.lcard b{font-size:14px}
+.lcard small{font-size:11px;color:var(--soft);line-height:1.2}
+/* M3: interface pouco acessível que se transforma */
+.a11y{display:grid;grid-template-columns:70px minmax(0,1fr);gap:8px;align-items:end}
+.a11y .antonio{width:70px;height:100px}
+.appmock{border-radius:18px;border:6px solid #2B1F66;background:#F3F2F8;color:#1B1440;padding:10px;display:grid;gap:7px;transition:all .3s}
+.appmock .sp{display:block;width:100%;text-align:left;background:none;border:2px dashed transparent;border-radius:8px;padding:3px;color:inherit;font:inherit}
+.appmock button.sp{cursor:pointer}
+.appmock .sp.found{border-color:var(--bad);background:rgba(255,92,122,.12)}
+.am-top{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.am-top .sp{width:auto}
+.am-ico{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#5A2DCF;color:#fff;font-size:16px}
+.am-btn{display:inline-block;background:#5A2DCF;color:#fff;border-radius:8px;padding:4px 10px;font-weight:700;font-size:13px}
+.am-ad{display:block;background:#FFD54F;color:#6B4E00;border-radius:6px;padding:3px 6px;font-size:10px;font-weight:700;margin-bottom:3px}
+.am-ad.b{background:#C8F7DC;color:#1F6B43}
+.am-note{font-size:9px;font-weight:700;color:#BDBCCB;line-height:1.25;transition:font-size .3s,color .3s}
+.appmock.big .am-note{font-size:19px}
+.appmock.hc .am-note{color:#0C0A24}
+.appmock.lowc{background:#C9C8D4}
+.appmock.lowc .am-note{color:#BDBCCB}
+.am-vid{position:relative;display:grid;place-items:center;height:76px;border-radius:8px;background:#1B1440;color:#fff;overflow:hidden}
+.am-play{font-size:22px}
+.am-cap{position:absolute;left:6px;right:6px;bottom:5px;background:rgba(0,0,0,.75);color:#fff;font-size:11px;font-weight:600;padding:3px 6px;border-radius:4px;text-align:center;animation:pop .4s}
+.am-voice{display:flex;align-items:center;gap:4px;background:#EDE7FF;color:#5A2DCF;border-radius:99px;padding:4px 10px;font-size:12px;font-weight:700;width:max-content}
+.am-voice svg{width:20px;height:20px}
+.am-voice i{width:4px;height:12px;border-radius:2px;background:#FF3EA5;animation:wave 1s infinite ease-in-out}
+.am-voice i:nth-of-type(2){animation-delay:.15s}.am-voice i:nth-of-type(3){animation-delay:.3s}
+.am-time{font-size:11px;color:#5B5880}
+.appmock.big .am-time{font-size:14px}
+.foundlist{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.foundlist span{border-radius:10px;padding:6px 8px;background:var(--card-2);font-size:12px;color:var(--soft);text-align:center}
+.foundlist span.on{background:rgba(255,62,165,.16);color:#fff}
+.tools2{grid-template-columns:repeat(2,1fr)}
+.tools2 button{min-height:56px;grid-template-columns:auto 1fr;justify-items:start;align-items:center;text-align:left;padding:8px 10px;font-size:13px}
+/* M4 */
+.choices button.no{opacity:.4;text-decoration:line-through}
+/* Final: linha do dia */
+.tline{display:grid;gap:8px}
+.tl-slot{position:relative;display:grid;grid-template-columns:62px 1fr;align-items:center;gap:8px;min-height:74px;padding:8px 10px 8px 52px;border-radius:14px;border:2px dashed var(--line);background:#11142A}
+.tl-slot em{position:absolute;left:10px;top:50%;transform:translateY(-50%);font-style:normal;font-weight:800;font-size:12px;color:var(--soft);width:36px}
+.tl-slot small{grid-column:1 / -1;color:var(--soft);font-size:13px}
+.tl-slot.filled{border:2px solid var(--c);background:color-mix(in srgb,var(--c) 10%,#11142A)}
+.tl-slot .word{justify-self:start;font-size:13px;padding:4px 12px}
+.scenes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.scard{display:grid;justify-items:center;gap:4px;text-align:center;border-radius:14px;padding:8px;background:var(--card-2);border:1px solid var(--edge)}
+.scard b{font-size:13px}
+.js{display:flex;align-items:flex-end;justify-content:center;gap:2px;height:58px}
+.js-lia{width:30px;height:48px;display:block}
+.js-prop{height:52px;display:flex;align-items:flex-end}
+.js-prop>svg{height:44px;width:auto}
+.js-prop .trio svg{height:40px;width:auto}
+.js svg{display:block}
+.js-lia svg{width:100%;height:100%}
+.tl-slot .js{height:54px}
+
 /* ===================== ESTILOS ESPECÍFICOS DESTE APP ===================== */
 
 .tbar{height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:-4px}
@@ -457,13 +570,14 @@ a{color:inherit}
 /* ===================== CONFIGURAÇÃO (edite aqui) ===================== */
 // Códigos que o apresentador mostra no telão. Devem ser IGUAIS aos do arquivo it-hub-apresentador.html.
 const CODIGOS_ETAPAS = {
+    bruna:  "ROTA",     // libera a missão 1
     laura:  "BYTE",     // libera a missão 2
     julia:  "ACESSO",   // libera a missão 3
     carlos: "EQUIPE"    // libera a missão 4
 };
 const TEMPO_ETAPA_SEG = 240;                       // 4 minutos por missão (individual)
-const STORAGE_KEY = "ithub-participante-v1";       // chave do progresso no localStorage
-const CODIGO_DA_ETAPA = { 2:CODIGOS_ETAPAS.laura, 3:CODIGOS_ETAPAS.julia, 4:CODIGOS_ETAPAS.carlos };
+const STORAGE_KEY = "ithub-participante-v2";       // chave do progresso no localStorage
+const CODIGO_DA_ETAPA = { 1:CODIGOS_ETAPAS.bruna, 2:CODIGOS_ETAPAS.laura, 3:CODIGOS_ETAPAS.julia, 4:CODIGOS_ETAPAS.carlos };
 
 /* ===================== ÍCONES, LOGO E PERSONAGENS ===================== */
 /* ===================== ÍCONES ===================== */
@@ -533,23 +647,23 @@ const WORDS = [
   { key:'ADAPTAR',   digit:'5', c:'#F4F5FA' }
 ];
 const MISSIONS = {
-  1:{ who:'Bruna', name:'A rota da Lia', art:'route', phases:['Para onde?','Trace o caminho','A mochila','Desafio tech','Votação da turma'], kinds:['place','path','bag','quiz','vote'],
+  1:{ who:'Bruna', name:'A rota da Lia', art:'route', phases:['Prepare o celular','Para onde?','Escolha a rota','Trace o caminho','A mochila','Desafio tech','Votação da turma'], kinds:['apps','place','route','path','bag','quiz','vote'],
       intro:'O assistente travou: a Lia está sem mapa e sem lembrete. Levem a Lia até o compromisso.',
       clue:'Sala 2', reveal:'Mapa planeja o trajeto, lembrete organiza a tarefa: tecnologia útil é a que atende uma necessidade concreta.',
       next:'Na sala 2, a Lia vai começar um curso.' },
-  2:{ who:'Laura', name:'Ensine o Byte', art:'robot', phases:['Programe o Byte','Encontre o bug','Desafio tech','Votação da turma'], kinds:['code','debug','quiz','vote'],
+  2:{ who:'Laura', name:'Ensine o Byte', art:'robot', phases:['Monte a trilha','Programe o Byte','Encontre o bug','Desafio tech','Votação da turma'], kinds:['learn','code','debug','quiz','vote'],
       intro:'A Lia está aprendendo a programar com o Byte. Montem o programa e encontrem o erro.',
       clue:'0 erros', reveal:'Escolher, praticar e conferir transforma informação em aprendizagem.',
       next:'A Lia termina a aula e vai ajudar o avô no ponto de ônibus.' },
-  3:{ who:'Júlia', name:'A tela do Seu Antônio', art:'eye', phases:['Conserte o aviso','Desafio tech','Caça às barreiras','Votação da turma'], kinds:['screen','quiz','spots','vote'],
+  3:{ who:'Júlia', name:'A tela do Seu Antônio', art:'eye', phases:['Conserte o aviso','Desafio tech','Caça às barreiras','Barreiras do app','Transforme o app','Votação da turma'], kinds:['screen','quiz','spots','appspot','appfix','vote'],
       intro:'O avô da Lia recebeu um aviso sobre o ônibus, mas não consegue ler. Consertem a tela.',
       clue:'Plataforma 3', reveal:'Uma boa solução considera pessoas diferentes desde o início.',
       next:'No ônibus, a Lia recebe um convite para entrar numa equipe.' },
-  4:{ who:'Carlos', name:'A equipe da Lia', art:'people', phases:['Escale o time','Reviravolta','Desafio tech','Votação da turma'], kinds:['team','twist','quiz','vote'],
+  4:{ who:'Carlos', name:'A equipe da Lia', art:'people', phases:['Escale o time','Reviravolta','Reorganize o time','Desafio tech','Votação da turma'], kinds:['team','twist','twist2','quiz','vote'],
       intro:'A Lia entrou numa equipe que vai criar um app para o bairro. Escalem o time e adaptem o plano.',
       clue:'5 estrelas', reveal:'Tecnologia é feita por equipes que escutam, criam, colaboram e se adaptam.',
       next:'Com as quatro palavras e os quatro números, a Lia volta ao assistente travado.' },
-  5:{ who:'Todos', name:'O cofre da Lia', art:'lock', phases:['Abrir o cofre','Última pergunta'], kinds:['vault','purpose'],
+  5:{ who:'Todos', name:'O cofre da Lia', art:'lock', phases:['Reconstrua o dia','Abrir o cofre','Última pergunta'], kinds:['journey','vault','purpose'],
       intro:'O assistente da cidade pede o código na ordem em que o dia aconteceu. Depois, faz uma última pergunta.', clue:'2035', reveal:'', next:'' }
 };
 /* Slides de fala. Os marcados com "amiga:true" são os que já estavam prontos no PDF do IT Hub, mantidos como estão. */
@@ -763,6 +877,7 @@ function gameM1(t){
   const g = gameOf(t, 1), T = `data-team="${t.id}"`, kind = kindOf(1, g);
   if (kind === 'quiz') return quizHTML(t, 1);
   if (kind === 'vote') return voteHTML(t, 1);
+  if (EXTRA[kind]) return EXTRA[kind](t);
   if (kind === 'place') return wrapGame(t, 1, 'Para onde a Lia vai?', 'Toque no lugar do compromisso dela.',
     `<div class="citymap">${M1.places.map(p => `<button class="place" style="--c:${p.c}" ${T} data-act="m1-place" data-id="${p.id}"><span class="pe">${A(p.art)}</span><span class="pl">${p.name}</span></button>`).join('')}<span class="map-lia">${LIA}</span></div>`);
   if (kind === 'path') {
@@ -792,6 +907,7 @@ function gameM2(t){
   const g = gameOf(t, 2), T = `data-team="${t.id}"`, kind = kindOf(2, g);
   if (kind === 'quiz') return quizHTML(t, 2);
   if (kind === 'vote') return voteHTML(t, 2);
+  if (EXTRA[kind]) return EXTRA[kind](t);
   if (kind === 'code') {
     const cfg = M2.p1, robot = g.anim ? g.anim.steps[g.anim.i] : cfg.start;
     const picked = robot.pick && !robot.crash && robot.y === cfg.target[0] && robot.x === cfg.target[1];
@@ -812,6 +928,7 @@ function gameM3(t){
   const g = gameOf(t, 3), T = `data-team="${t.id}"`, kind = kindOf(3, g);
   if (kind === 'quiz') return quizHTML(t, 3);
   if (kind === 'vote') return voteHTML(t, 3);
+  if (EXTRA[kind]) return EXTRA[kind](t);
   if (kind === 'screen') {
     const on = id => g.on.includes(id), ok = M3.good.every(on) && !M3.bad.some(on);
     return wrapGame(t, 3, 'Ajude o Seu Antônio a ler', 'Ligue e desligue os recursos até o aviso ficar legível.',
@@ -837,6 +954,7 @@ function gameM4(t){
   const g = gameOf(t, 4), T = `data-team="${t.id}"`, kind = kindOf(4, g);
   if (kind === 'quiz') return quizHTML(t, 4);
   if (kind === 'vote') return voteHTML(t, 4);
+  if (EXTRA[kind]) return EXTRA[kind](t);
   if (kind === 'team') {
     const used = Object.values(g.placed);
     return wrapGame(t, 4, 'Escale o time da Lia', 'Toque numa pessoa e depois na tarefa certa para ela.',
@@ -855,6 +973,7 @@ function purposeHTML(t){
     <div class="qtiles ${sh}">${PURPOSE.opts.map((o, i) => `<button class="qtile ${g.qno.includes(i) ? 'no' : ''}" style="--c:${QS[i].c}" ${T} data-act="m0-purpose" data-k="5" data-i="${i}" ${g.qno.includes(i) ? 'disabled' : ''}>${SHAPES[QS[i].s]}<span>${o}</span></button>`).join('')}</div><p class="msg">${t.msg || ''}</p></div>`;
 }
 function gameVault(t){
+  if (kindOf(5, gameOf(t, 5)) === 'journey') return EXTRA.journey(t);
   if (kindOf(5, gameOf(t, 5)) === 'purpose') return purposeHTML(t);
   const g = gameOf(t, 5), T = `data-team="${t.id}"`, sh = t.shakeOn ? (t.shakeN % 2 ? 'shakeA' : 'shakeB') : '';
   return `<div class="game"><div class="hud"><span class="hud-m">${I.lock}</span><span class="ph-kicker" style="flex:1">Missão final</span><span class="tbadge" data-timer></span></div><div class="tbar"><i data-bar></i></div>
@@ -877,6 +996,7 @@ function gameHTML(t, k){
 
 /* Ações dos jogos */
 function gameAction(t, act, b){
+  if (extraAction(t, act, b)) return;
   const k = act.startsWith('m0-') ? Number(b.dataset.k) : Number(act[1]);
   if (!canPlay(k)) return;
   const g = gameOf(t, k);
@@ -942,9 +1062,230 @@ function gameAction(t, act, b){
 }
 
 
+
+/* ===================== FASES ACRESCENTADAS (as fases originais continuam iguais) ===================== */
+Object.assign(ART, {
+  appmap:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="12" fill="#1F8F5E"/><path d="M2 30l16-10 12 8 16-12v22a12 12 0 0 1-12 12H14A12 12 0 0 1 2 38z" fill="#3DDC97"/><path d="M8 40L40 10" stroke="#FFE9A8" stroke-width="4"/><path d="M30 22c0 6-6 12-6 12s-6-6-6-12a6 6 0 0 1 12 0z" fill="#FF3EA5"/><circle cx="24" cy="22" r="2.4" fill="#fff"/></svg>',
+  appbell:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="12" fill="#FFB547"/><path d="M15 31V22a9 9 0 0 1 18 0v9l2.5 3h-23z" fill="#fff"/><path d="M21 37a3 3 0 0 0 6 0" fill="#fff"/><circle cx="33" cy="14" r="5" fill="#FF3EA5"/></svg>',
+  appmusic:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="2" y="2" width="44" height="44" rx="12" fill="#7C4DFF"/><path d="M20 32V15l14-3v17" stroke="#fff" stroke-width="3" fill="none"/><circle cx="16.5" cy="32" r="4.5" fill="#fff"/><circle cx="30.5" cy="29" r="4.5" fill="#fff"/></svg>',
+  lchoose:'<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="22" cy="26" r="16" fill="#FF3EA5"/><circle cx="22" cy="26" r="10.5" fill="#fff"/><circle cx="22" cy="26" r="5.5" fill="#FF3EA5"/><path d="M22 26L40 8" stroke="#2B1F66" stroke-width="3" stroke-linecap="round"/><path d="M36 5h7v7" stroke="#2B1F66" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+  lpractice:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="9" width="34" height="23" rx="3" fill="#7C4DFF"/><rect x="10.5" y="12.5" width="27" height="16" rx="2" fill="#0C0E1A"/><path d="M15 17l-3 3 3 3M33 17l3 3-3 3M26 15l-4 10" stroke="#00E0FA" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M3 35h42l-4 5H7z" fill="#E8E8F5"/></svg>',
+  lcheck:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="7" width="30" height="36" rx="4" fill="#E8E8F5"/><rect x="17" y="4" width="14" height="6" rx="2" fill="#00E0FA"/><path d="M14 19l3 3 5-6M14 30l3 3 5-6" stroke="#1F8F5E" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M26 19h8M26 30h8" stroke="#9CA1BF" stroke-width="2.6" stroke-linecap="round"/></svg>',
+  idea:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 30a11 11 0 1 1 14 0v5H17z" fill="#FFB547"/><rect x="18" y="37" width="12" height="4" rx="2" fill="#9CA1BF"/><path d="M24 4V1M40 18h3M5 18h3M36 7l2-2M12 7l-2-2" stroke="#FFB547" stroke-width="2.4" stroke-linecap="round"/></svg>',
+  website:'<svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="8" width="40" height="30" rx="4" fill="#E8E8F5"/><rect x="4" y="8" width="40" height="7" rx="3" fill="#FF3EA5"/><circle cx="9" cy="11.5" r="1.4" fill="#fff"/><circle cx="13" cy="11.5" r="1.4" fill="#fff"/><rect x="9" y="19" width="16" height="12" rx="2" fill="#7C4DFF"/><rect x="28" y="19" width="11" height="3" rx="1.5" fill="#9CA1BF"/><rect x="28" y="25" width="9" height="3" rx="1.5" fill="#9CA1BF"/><path d="M20 42h8" stroke="#9CA1BF" stroke-width="3" stroke-linecap="round"/></svg>'
+});
+const APPS = [{ id:'map', n:'Mapa', sub:'Rotas e trânsito', art:'appmap' }, { id:'music', n:'Música', sub:'Playlist do dia', art:'appmusic' }, { id:'rem', n:'Lembretes', sub:'Avisos na hora certa', art:'appbell' }];
+const APP_OK = ['map', 'rem'];
+const ROUTES = [
+  { id:'a', n:'Rota A', via:'Avenida Central', mins:38, arrive:'14h08', ok:false, note:'Obra na avenida: trânsito parado', path:'M40 182 H150 V42 H284', c:'#FF5C7A', lab:[156, 76] },
+  { id:'b', n:'Rota B', via:'Pelo parque', mins:20, arrive:'13h50', ok:true, note:'Trânsito livre', path:'M40 182 V122 Q40 102 60 102 H200 Q220 102 220 82 V42 H284', c:'#00E0FA', lab:[96, 96] },
+  { id:'c', n:'Rota C', via:'Ônibus e caminhada', mins:31, arrive:'14h01', ok:false, note:'Ônibus com 12 min de atraso', path:'M40 182 H250 Q284 182 284 150 V42', c:'#FFB547', lab:[200, 196] }
+];
+const LEARN = [{ id:'praticar', n:'Praticar', sub:'Uma atividade curta', art:'lpractice' }, { id:'conferir', n:'Conferir', sub:'Testar o que fez', art:'lcheck' }, { id:'escolher', n:'Escolher', sub:'Definir o que aprender', art:'lchoose' }];
+const LEARN_OK = ['escolher', 'praticar', 'conferir'];
+const A11Y = {
+  spots:[{ id:'text', n:'Texto pequeno e apagado' }, { id:'video', n:'Vídeo sem legenda' }, { id:'icon', n:'Botão só com ícone' }, { id:'clutter', n:'Excesso de anúncios' }],
+  tools:[{ id:'big', n:'Letra maior', i:'search' }, { id:'contrast', n:'Contraste alto', i:'contrast' }, { id:'captions', n:'Legendas', i:'chat' }, { id:'voice', n:'Ler em voz alta', i:'speaker' }, { id:'simple', n:'Tela simples', i:'gear' }, { id:'lowc', n:'Reduzir contraste', i:'eye' }, { id:'info', n:'Mais informações', i:'plus' }],
+  good:['big', 'contrast', 'captions', 'voice', 'simple'], bad:['lowc', 'info']
+};
+const TWIST2 = [
+  { id:'adapt', n:'Escuta conversa com quem fica sem internet, Criatividade desenha o modo offline e o time constrói junto', stars:5, res:'App relançado com modo offline: 5 estrelas!' },
+  { id:'ignore', n:'Manter o plano: quem não tem internet que se vire', stars:2, res:'Metade do bairro não consegue usar o app: 2 estrelas.' },
+  { id:'cancel', n:'Cancelar o projeto', stars:0, res:'Projeto cancelado: o bairro continua sem solução.' },
+  { id:'solo', n:'Cada um faz uma parte sozinho, sem conversar', stars:2, res:'As partes não se encaixam: 2 estrelas.' }
+];
+const JOURNEY = [{ k:1, time:'13h30', n:'Chegar ao compromisso' }, { k:2, time:'15h', n:'Aprender algo novo' }, { k:3, time:'17h', n:'Ajudar o Seu Antônio' }, { k:4, time:'19h', n:'Trabalhar em equipe' }];
+const JOURNEY_SHOW = [2, 0, 3, 1];
+const T_ = t => `data-team="${t.id}"`;
+const isSel = (t, kind, id) => t.sel && t.sel.kind === kind && t.sel.id === id ? 'picked' : '';
+const svgInner = s => s.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '');
+const ext = g => Object.assign(g, { dock:g.dock || [], route:g.route || null, tried:g.tried || [], slots:g.slots || [null, null, null], afound:g.afound || [], aon:g.aon || [], twist2:g.twist2 || null, ttried:g.ttried || [], tslots:g.tslots || [null, null, null, null] });
+
+function routeMap(sel, arrive){
+  const R = ROUTES.find(r => r.id === sel), lia = svgInner(LIA);
+  return `<svg class="rmap" viewBox="0 0 320 222" role="img" aria-label="Mapa com três rotas da casa da Lia até a Praça Azul">
+    <rect width="320" height="222" rx="16" fill="#1A2238"/><rect x="58" y="112" width="80" height="58" rx="10" fill="#1F8F5E" opacity=".55"/>
+    ${[[72, 128], [96, 148], [118, 126], [80, 156]].map(p => `<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="#3DDC97"/>`).join('')}
+    <rect x="62" y="18" width="74" height="70" rx="8" fill="#2B2F55"/><rect x="164" y="18" width="44" height="62" rx="8" fill="#2B2F55"/><rect x="232" y="58" width="36" height="30" rx="6" fill="#2B2F55"/><rect x="164" y="116" width="66" height="52" rx="8" fill="#2B2F55"/><rect x="246" y="98" width="24" height="64" rx="6" fill="#2B2F55"/>
+    ${ROUTES.map(r => `<path d="${r.path}" fill="none" stroke="#2E3654" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>`).join('')}
+    ${ROUTES.map(r => `<path d="${r.path}" fill="none" stroke="${r.c}" stroke-width="${r.id === sel ? 8 : 4}" stroke-linecap="round" stroke-linejoin="round" opacity="${sel && r.id !== sel ? .3 : 1}" ${r.id === sel ? 'class="route-on"' : ''}/>`).join('')}
+    <g transform="translate(150 110)"><path d="M0-12l8 22h-16z" fill="#FF8A3D"/><path d="M-4-1h8M-6 5h12" stroke="#fff" stroke-width="2.4"/></g>
+    <g transform="translate(250 182)"><rect x="-2" y="-22" width="4" height="22" fill="#9CA1BF"/><circle cy="-24" r="7" fill="#7C4DFF"/><text y="-21" text-anchor="middle" font-size="8" font-weight="700" fill="#fff">+12</text></g>
+    <g transform="translate(26 166)"><path d="M0 8L14-4l14 12z" fill="#8B5CF6"/><rect x="3" y="7" width="22" height="14" rx="2" fill="#FFE0CC"/></g>
+    <g transform="translate(270 14)"><ellipse cx="14" cy="30" rx="14" ry="5" fill="#4F7CFF"/><rect x="11" y="14" width="6" height="15" rx="2" fill="#E8E8F5"/><ellipse cx="14" cy="15" rx="8" ry="3" fill="#00E0FA"/></g>
+    <text x="14" y="214" font-size="9" fill="#9CA1BF">Casa da Lia</text><text x="306" y="214" font-size="9" fill="#9CA1BF" text-anchor="end">Praça Azul: compromisso às 14h</text>
+    ${ROUTES.map(r => `<g transform="translate(${r.lab[0]} ${r.lab[1]})"><rect x="-14" y="-11" width="28" height="18" rx="9" fill="${r.c}"/><text y="2.5" text-anchor="middle" font-size="10" font-weight="700" fill="#0C0E1A">${r.id.toUpperCase()}</text></g>`).join('')}
+    ${R && arrive ? `<g><animateMotion dur="1.8s" fill="freeze" path="${R.path}"/><svg x="-10" y="-30" width="20" height="30" viewBox="0 0 60 96">${lia}</svg></g>` : `<svg x="30" y="150" width="20" height="30" viewBox="0 0 60 96">${lia}</svg>`}</svg>`;
+}
+function appMock(st, opts = {}){
+  const on = id => st.includes(id);
+  const spot = (id, inner) => opts.spots ? `<button class="sp ${(opts.found || []).includes(id) ? 'found' : ''}" data-team="${opts.team}" data-act="m3-aspot" data-id="${id}">${inner}</button>` : `<div class="sp">${inner}</div>`;
+  return `<div class="appmock ${on('contrast') && !on('lowc') ? 'hc' : ''} ${on('lowc') ? 'lowc' : ''} ${on('big') ? 'big' : ''}">
+    <div class="am-top">${spot('ok1', '<b>Linha 3</b>')}${spot('icon', on('simple') ? '<span class="am-btn">⟳ Atualizar</span>' : '<span class="am-ico">⟳</span>')}</div>
+    ${!on('simple') ? spot('clutter', `<span class="am-ad">PROMOÇÃO!!! Baixe já</span><span class="am-ad b">Ganhe pontos ✦✦✦</span>${on('info') ? '<span class="am-ad">Notícias · Clima · Horóscopo</span><span class="am-ad b">Pesquisa de satisfação</span>' : ''}`) : ''}
+    ${spot('text', '<p class="am-note">Atenção: o ônibus agora sai da plataforma 3</p>')}
+    ${spot('video', `<span class="am-vid"><span class="am-play">▶</span>${on('captions') ? '<span class="am-cap">Siga as placas azuis até a plataforma 3</span>' : ''}</span>`)}
+    ${on('voice') ? `<span class="am-voice">${A('speaker')}<i></i><i></i><i></i> Lendo em voz alta</span>` : ''}
+    ${spot('ok2', '<span class="am-time">Próximo ônibus: 14h20</span>')}</div>`;
+}
+function journeyScene(k){
+  const prop = k === 1 ? A('appmap') : k === 2 ? BYTE : k === 3 ? antonio(true) : `<span class="trio">${M4.chars.map(c => avatar(c.shirt, c.hair)).join('')}</span>`;
+  return `<span class="js"><span class="js-lia">${LIA}</span><span class="js-prop">${prop}</span></span>`;
+}
+
+/* Telas das fases novas */
+const EXTRA = {
+  apps(t){
+    const g = ext(gameOf(t, 1));
+    return wrapGame(t, 1, 'Prepare o celular da Lia', 'Compromisso às 14h em outro bairro, com itens para levar. Arraste para a tela inicial os 2 apps que resolvem isso.',
+      `<div class="phonehome"><div class="ph-status"><span>13:25</span><span>Lia</span></div><div class="ph-widget"><b>14h</b> compromisso · Praça Azul</div>
+        <div class="dock" data-drop="dock" ${T_(t)} data-act="drop">${[0, 1].map(i => { const a = APPS.find(x => x.id === g.dock[i]); return `<span class="dslot">${a ? `<span class="appi">${A(a.art)}</span><small>${a.n}</small>` : '<small>solte aqui</small>'}</span>`; }).join('')}</div></div>
+       <div class="apps">${APPS.filter(a => !g.dock.includes(a.id)).map(a => `<span class="appcard ${isSel(t, 'app', a.id)}" data-drag="${a.id}" data-dk="app" ${T_(t)}><span class="appi">${A(a.art)}</span><b>${a.n}</b><small>${a.sub}</small></span>`).join('')}</div>`);
+  },
+  route(t){
+    const g = ext(gameOf(t, 1)), R = ROUTES.find(r => r.id === g.route), solved = R && R.ok;
+    return wrapGame(t, 1, 'Escolha a rota', 'O Mapa mostra o trânsito agora. A Lia sai às 13h30. Qual rota chega antes das 14h?',
+      `${routeMap(g.route, !!g.route)}${R ? `<div class="consq ${R.ok ? 'ok' : 'bad'}"><b>${R.ok ? 'No horário!' : 'Atrasada!'}</b> Chegou às ${R.arrive}. ${R.note}.</div>` : ''}
+       <div class="routes">${ROUTES.map(r => `<button class="routecard ${g.tried.includes(r.id) && !r.ok ? 'no' : ''} ${g.route === r.id ? 'sel' : ''}" style="--c:${r.c}" ${T_(t)} data-act="m1-route" data-id="${r.id}" ${solved ? 'disabled' : ''}><b>${r.n}</b><span>${r.via}</span><small>${r.mins} min · ${r.note}</small></button>`).join('')}</div>`);
+  },
+  learn(t){
+    const g = ext(gameOf(t, 2));
+    return wrapGame(t, 2, 'Monte a trilha do primeiro projeto', 'A Lia quer criar o site da feira de ciências. Arraste as etapas para a trilha, na ordem certa.',
+      `<div class="trail"><span class="tstart">${A('idea')}<small>Ideia</small></span>
+        ${[0, 1, 2].map(i => { const c = LEARN.find(x => x.id === g.slots[i]); return `<span class="tslot ${c ? 'filled' : ''}" data-drop="slot${i}" ${T_(t)} data-act="drop"><em>${i + 1}</em>${c ? `<span class="lart">${A(c.art)}</span><small>${c.n}</small>` : ''}</span>`; }).join('<i class="tarrow">›</i>')}
+        <span class="tend">${A('website')}<small>Site</small></span></div>
+       <div class="lcards">${LEARN.filter(c => !g.slots.includes(c.id)).map(c => `<span class="lcard ${isSel(t, 'learn', c.id)}" data-drag="${c.id}" data-dk="learn" ${T_(t)}><span class="lart">${A(c.art)}</span><b>${c.n}</b><small>${c.sub}</small></span>`).join('')}</div>`);
+  },
+  appspot(t){
+    const g = ext(gameOf(t, 3));
+    return wrapGame(t, 3, 'Encontre as barreiras do app', `Agora é o app de ônibus inteiro. Toque nas 4 barreiras da tela. Encontradas: ${g.afound.length}/4`,
+      `<div class="a11y"><span class="antonio">${antonio(false)}</span>${appMock([], { spots:true, found:g.afound, team:t.id })}</div>
+       <div class="foundlist">${A11Y.spots.map(s => `<span class="${g.afound.includes(s.id) ? 'on' : ''}">${g.afound.includes(s.id) ? '✓ ' + s.n : '?'}</span>`).join('')}</div>`);
+  },
+  appfix(t){
+    const g = ext(gameOf(t, 3)), ok = A11Y.good.every(x => g.aon.includes(x)) && !A11Y.bad.some(x => g.aon.includes(x));
+    return wrapGame(t, 3, 'Transforme o app', 'Ative os recursos certos. A tela muda a cada escolha. Cuidado com o que piora!',
+      `<div class="a11y"><span class="antonio">${antonio(ok)}</span>${appMock(g.aon)}</div><p class="say">${ok ? '“Agora sim! Plataforma 3, entendi.”' : '“Ainda está difícil, minha filha…”'}</p>
+       <div class="tools tools2">${A11Y.tools.map(x => `<button ${T_(t)} data-act="m3-atool" data-id="${x.id}" aria-pressed="${g.aon.includes(x.id)}">${I[x.i]}${x.n}</button>`).join('')}</div>`);
+  },
+  twist2(t){
+    const g = ext(gameOf(t, 4)), X = TWIST2.find(x => x.id === g.twist2);
+    return wrapGame(t, 4, 'Como o time se reorganiza?', 'O modo offline foi aprovado. Agora o time precisa se reorganizar para construir. Qual caminho?',
+      `${X ? `<div class="consq ${X.stars === 5 ? 'ok' : 'bad'}"><span class="rate">${'★'.repeat(X.stars)}${'☆'.repeat(5 - X.stars)}</span>${X.res}</div>` : ''}
+       <div class="choices">${TWIST2.map(x => `<button class="${g.ttried.includes(x.id) && x.stars < 5 ? 'no' : ''}" ${T_(t)} data-act="m4-twist2" data-id="${x.id}" ${X && X.stars === 5 ? 'disabled' : ''}>${x.n}</button>`).join('')}</div>`);
+  },
+  journey(t){
+    const g = ext(gameOf(t, 5)), full = g.tslots.every(x => x != null);
+    return wrapGame(t, 5, 'Reconstrua o dia da Lia', 'Arraste cada momento para o horário em que aconteceu. Depois, abra o cofre.',
+      `<div class="tline">${JOURNEY.map((j, i) => { const w = WORDS[i], placed = g.tslots[i] != null;
+        return `<span class="tl-slot ${placed ? 'filled' : ''}" data-drop="ts${i}" ${T_(t)} data-act="drop" style="--c:${w.c}"><em>${j.time}</em>${placed ? `${journeyScene(j.k)}<b class="word" style="--c:${w.c}">${w.key}</b>` : '<small>solte aqui</small>'}</span>`; }).join('')}</div>
+       ${full ? '' : `<div class="scenes">${JOURNEY_SHOW.filter(i => !g.tslots.includes(i)).map(i => `<span class="scard ${isSel(t, 'scene', String(i))}" data-drag="${i}" data-dk="scene" ${T_(t)}>${journeyScene(JOURNEY[i].k)}<b>${JOURNEY[i].n}</b></span>`).join('')}</div>`}`);
+  }
+};
+
+/* Ações das fases novas (retorna true quando tratou a ação) */
+function extraAction(t, act, b){
+  if (act === 'drop') { if (t.sel) dropAction(t, t.sel.kind, t.sel.id, b.dataset.drop); return true; }
+  if (!['m1-route', 'm3-aspot', 'm3-atool', 'm4-twist2'].includes(act)) return false;
+  const k = Number(act[1]); if (!canPlay(k)) return true;
+  const g = ext(gameOf(t, k)); t.curK = k; t.shakeOn = false;
+  if (act === 'm1-route') {
+    const r = ROUTES.find(x => x.id === b.dataset.id);
+    if (!g.tried.includes(r.id)) g.tried.push(r.id);
+    g.route = r.id;
+    if (r.ok) { t.msg = ''; render(); setTimeout(() => advance(t, 1), 2200); return true; }
+    g.err++; t.shakeN++; t.shakeOn = true; t.msg = 'Escolha outra rota.'; render(); return true;
+  }
+  if (act === 'm3-aspot') {
+    const id = b.dataset.id;
+    if (!A11Y.spots.some(s => s.id === id)) { shake(t, 'Isso aqui está acessível.'); return true; }
+    if (!g.afound.includes(id)) g.afound.push(id); t.msg = '';
+    render(); if (g.afound.length === A11Y.spots.length) setTimeout(() => advance(t, 3), 500); return true;
+  }
+  if (act === 'm3-atool') {
+    const id = b.dataset.id;
+    g.aon = g.aon.includes(id) ? g.aon.filter(x => x !== id) : [...g.aon, id];
+    if (A11Y.bad.includes(id) && g.aon.includes(id)) { shake(t, id === 'info' ? 'Mais informação deixou a tela ainda mais confusa.' : 'Com menos contraste, ninguém lê.'); return true; }
+    t.msg = ''; render();
+    if (A11Y.good.every(x => g.aon.includes(x)) && !A11Y.bad.some(x => g.aon.includes(x))) setTimeout(() => advance(t, 3), 1100);
+    return true;
+  }
+  if (act === 'm4-twist2') {
+    const x = TWIST2.find(y => y.id === b.dataset.id);
+    if (!g.ttried.includes(x.id)) g.ttried.push(x.id);
+    g.twist2 = x.id;
+    if (x.stars === 5) { t.msg = ''; render(); setTimeout(() => advance(t, 4), 1600); return true; }
+    g.err++; t.shakeN++; t.shakeOn = true; t.msg = 'Tente outra forma de reorganizar o time.'; render(); return true;
+  }
+  return false;
+}
+
+/* Arrastar e soltar (tocar na carta e depois no lugar também funciona) */
+let drag = null;
+document.addEventListener('pointerdown', e => {
+  const el = e.target.closest('[data-drag]'); if (!el) return;
+  const kk = { app:1, learn:2, scene:5 }[el.dataset.dk]; if (!canPlay(kk)) return;
+  const r = el.getBoundingClientRect(), ghost = el.cloneNode(true);
+  ghost.classList.add('ghost'); ghost.style.width = r.width + 'px'; ghost.style.height = r.height + 'px';
+  drag = { t:P, id:el.dataset.drag, kind:el.dataset.dk, ghost, dx:e.clientX - r.left, dy:e.clientY - r.top, x0:e.clientX, y0:e.clientY, moved:false, src:el };
+  try { el.setPointerCapture(e.pointerId); } catch (err) {}
+});
+document.addEventListener('pointermove', e => {
+  if (!drag) return;
+  if (!drag.moved && Math.hypot(e.clientX - drag.x0, e.clientY - drag.y0) > 8) { drag.moved = true; document.body.appendChild(drag.ghost); drag.src.classList.add('dragging'); }
+  if (drag.moved) {
+    e.preventDefault(); drag.ghost.style.transform = `translate(${e.clientX - drag.dx}px,${e.clientY - drag.dy}px)`;
+    document.querySelectorAll('.drop-hover').forEach(x => x.classList.remove('drop-hover'));
+    const u = document.elementFromPoint(e.clientX, e.clientY), d = u && u.closest('[data-drop]'); if (d) d.classList.add('drop-hover');
+  }
+}, { passive:false });
+document.addEventListener('pointerup', e => {
+  if (!drag) return;
+  const d = drag; drag = null; d.ghost.remove(); d.src.classList.remove('dragging');
+  document.querySelectorAll('.drop-hover').forEach(x => x.classList.remove('drop-hover'));
+  if (!d.moved) { d.t.sel = d.t.sel && d.t.sel.id === d.id ? null : { kind:d.kind, id:d.id }; d.t.msg = d.t.sel ? 'Agora toque onde quer colocar.' : ''; return render(); }
+  const u = document.elementFromPoint(e.clientX, e.clientY), drop = u && u.closest('[data-drop]');
+  d.t.sel = null;
+  if (drop) dropAction(d.t, d.kind, d.id, drop.dataset.drop);
+});
+function dropAction(t, kind, id, target){
+  const k = { app:1, learn:2, scene:5 }[kind];
+  if (!k || !canPlay(k)) return;
+  const g = ext(gameOf(t, k));
+  t.curK = k; t.shakeOn = false; t.sel = null; t.msg = '';
+  if (kind === 'app' && target === 'dock') {
+    if (!g.dock.includes(id) && g.dock.length < 2) g.dock.push(id);
+    if (g.dock.length === 2) {
+      if (g.dock.every(x => APP_OK.includes(x))) { render(); return setTimeout(() => advance(t, 1), 700); }
+      g.dock = g.dock.filter(x => APP_OK.includes(x));
+      return shake(t, 'Música deixa o caminho legal, mas não evita atraso nem esquecimento. Troque o app.');
+    }
+    return render();
+  }
+  if (kind === 'learn' && target.startsWith('slot')) {
+    const i = +target.slice(4); g.slots = g.slots.map(x => x === id ? null : x); g.slots[i] = id;
+    if (g.slots.every(x => x)) {
+      if (g.slots.join() === LEARN_OK.join()) { t.msg = 'Trilha certa: ideia → escolher → praticar → conferir → site!'; render(); return setTimeout(() => advance(t, 2), 900); }
+      g.slots = g.slots.map((x, j) => x === LEARN_OK[j] ? x : null);
+      return shake(t, 'Algumas etapas estão fora de ordem. Lembra da fala da Laura?');
+    }
+    return render();
+  }
+  if (kind === 'scene' && target.startsWith('ts')) {
+    const i = +target.slice(2), sc = +id;
+    if (g.tslots[i] != null) return render();
+    if (sc !== i) return shake(t, 'Esse momento aconteceu em outro horário do dia.');
+    g.tslots[i] = sc;
+    if (g.tslots.every(x => x != null)) { t.msg = 'Dia reconstruído! Agora abra o cofre.'; render(); return setTimeout(() => advance(t, 5), 1200); }
+    return render();
+  }
+  render();
+}
+
+
 /* ===================== ESTADO LOCAL (localStorage) ===================== */
 // P guarda tudo do participante. Só o que está em stages/games/result é salvo.
-const P = { id:'eu', games:{}, stages:{}, result:null, shakeN:0, shakeOn:false, msg:'', curK:null, draft:'', codeMsg:'' };
+const P = { id:'eu', games:{}, stages:{}, result:null, shakeN:0, shakeOn:false, msg:'', curK:null, draft:'', codeMsg:'', sel:null };
 const st = k => P.stages[k] || { status:'locked' };            // locked | playing | done
 const isDone = k => st(k).status === 'done';
 const playingK = () => [1, 2, 3, 4, 5].find(k => st(k).status === 'playing') || null;
@@ -1007,12 +1348,13 @@ function tick(){
   paintTimer();
 }
 
-/* ===================== CÓDIGOS DAS ETAPAS 2 A 4 ===================== */
+
+/* ===================== CÓDIGOS DAS ETAPAS 1 A 4 ===================== */
 function tentarCodigo(v){
   const nk = nextK(), c = norm(v);
   if (!c) P.codeMsg = 'Digite o código que está no telão.';
   else {
-    const hit = [2, 3, 4].find(k => norm(CODIGO_DA_ETAPA[k]) === c);
+    const hit = [1, 2, 3, 4].find(k => norm(CODIGO_DA_ETAPA[k]) === c);
     if (!hit) P.codeMsg = 'Código incorreto. Confira o telão e tente de novo.';
     else if (hit < nk) P.codeMsg = 'Esse código é de uma etapa que você já concluiu.';
     else if (hit > nk) P.codeMsg = `Esse código é da etapa ${hit}. Conclua a etapa ${nk} primeiro.`;
@@ -1039,15 +1381,14 @@ function hubHTML(){
     const M = MISSIONS[k], s = st(k), done = s.status === 'done';
     const state = done ? 'done' : k === nk ? 'next' : 'lock';
     const label = done ? (k === 5 ? (s.recovered ? 'Código revelado' : 'Cofre aberto') : s.recovered ? 'Fragmento recuperado' : `Concluída · ${starsOf(P.games[k])}/${starPhases(k)} estrelas`)
-      : state === 'next' ? (k === 1 ? 'Pronta para começar' : k === 5 ? 'Cofre liberado' : 'Aguardando o código do telão') : 'Bloqueada';
+      : state === 'next' ? (k === 5 ? 'Cofre liberado' : 'Aguardando o código do telão') : 'Bloqueada';
     const dig = k <= 4 && done ? `<span class="nd" style="--c:${WORDS[k - 1].c}">${WORDS[k - 1].digit}</span>` : '';
     return `<li class="node ${state}"><span class="nart">${state === 'lock' ? I.lock : missionArt(k)}</span><div><b>${k === 5 ? 'Missão final' : `Missão ${k}`}: ${M.name}</b><small>${label}</small></div>${dig}</li>`;
   }).join('');
   const frags = `<div class="fragrow" aria-label="Fragmentos conquistados">${WORDS.map((w, i) => { const d = isDone(i + 1);
     return `<div class="fslot ${d ? 'on' : ''}" style="--c:${w.c}"><b>${d ? w.digit : '?'}</b><small>${d ? w.key : 'a descobrir'}</small></div>`; }).join('')}</div>`;
   let act;
-  if (nk === 1) act = `<button class="btn" data-act="start" data-k="1">Começar missão 1 · ${fmtMin(TEMPO_ETAPA_SEG)}</button><p class="soft" style="font-size:13px;text-align:center">O cronômetro começa assim que você tocar.</p>`;
-  else if (nk >= 2 && nk <= 4) act = codeForm(nk);
+  if (nk >= 1 && nk <= 4) act = codeForm(nk) + '<p class="soft" style="font-size:13px;text-align:center">O cronômetro começa assim que o código for aceito.</p>';
   else if (nk === 5) act = `<button class="btn" data-act="start" data-k="5">Abrir o cofre · ${fmtMin(TEMPO_ETAPA_SEG)}</button>`;
   else act = '<p class="ph-title" style="text-align:center">Você destravou o dia da Lia!</p>';
   const total = [1, 2, 3, 4].reduce((a, k) => a + starsOf(P.games[k]), 0);
@@ -1099,7 +1440,7 @@ app.addEventListener('click', e => {
   const b = e.target.closest('[data-act]');
   if (!b || b.disabled) return;
   const act = b.dataset.act;
-  if (/^m\d-/.test(act)) { gameAction(P, act, b); return; }
+  if (/^m\d-/.test(act) || act === 'drop') { gameAction(P, act, b); return; }
   if (act === 'start') startStage(Number(b.dataset.k));
   else if (act === 'ack') { P.result = null; save(); render(); window.scrollTo(0, 0); }
   else if (act === 'reset') { if (confirm('Apagar todo o seu progresso neste celular e recomeçar?')) resetAll(); }
